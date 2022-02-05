@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 
-public enum AttackType
+public enum AttackEffects
 {
     Normal,
-    Lightning,
-    Fire,
-    Confusion
+    Burn,
+    Corrosion,
+    Sleep,
+    Stunned,
+    Frozen,
+    Soulsteal
 }
 
 public class Attack : MonoBehaviour
 {
-    public string AttackName;
-    public int AttackDamage;
+    public string AttackName = "None";
+    public int AttackDamage = 100;
 
-    public List<AttackType> TraitsOnAttack = new List<AttackType>();
+    public List<AttackEffects> TraitsOnAttack = new List<AttackEffects>();
 
     public Attack(int Power)
     {
         AttackName = "basic attack";
         AttackDamage = Power;
-        TraitsOnAttack.Add(AttackType.Normal);
+        TraitsOnAttack.Add(AttackEffects.Normal);
     }
 
 }
